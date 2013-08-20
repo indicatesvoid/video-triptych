@@ -101,9 +101,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\PressureMonitor.cpp" />
     <ClCompile Include="src\VideoTriptych.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\PressureMonitor.h" />
     <ClInclude Include="src\VideoTriptych.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,8 +8,8 @@ PressureMonitor::PressureMonitor()
     this->time = ofGetElapsedTimeMillis();
     
     ofSetLogLevel(OF_LOG_VERBOSE);
-	serial.setup(0, 9600); //open the first device
-	//serial.setup("COM4", baud); // windows example
+	//serial.setup(0, 9600); //open the first device
+	serial.setup("COM3", 9600); // windows example
 	//serial.setup("/dev/tty.usbserial-A4001JEC", baud); // mac osx example
 	//serial.setup("/dev/ttyUSB0", baud); //linux example
     
