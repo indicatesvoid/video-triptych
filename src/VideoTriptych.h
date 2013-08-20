@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "PressureMonitor.h"
 
 class VideoTriptych : public ofBaseApp{
 
@@ -18,5 +19,8 @@ class VideoTriptych : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+    private:
+        PressureMonitor     pm;
 		
 };
