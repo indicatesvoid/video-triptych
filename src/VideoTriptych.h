@@ -1,6 +1,9 @@
+
 #pragma once
 
 #include "ofMain.h"
+#include "Settings.h"
+#include "Screen.h"
 #include "PressureMonitor.h"
 
 class VideoTriptych : public ofBaseApp{
@@ -12,15 +15,9 @@ class VideoTriptych : public ofBaseApp{
 
 		void keyPressed(int key);
 		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
     
     private:
         PressureMonitor     pm;
-		
+        vector<Screen*>     screens;
+
 };
