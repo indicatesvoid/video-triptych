@@ -1,6 +1,5 @@
 
 #include "Screen.h"
-//#include <array>
 
 Screen::Screen(int id)
 {
@@ -40,8 +39,7 @@ void Screen::draw()
 	if (cameraReady){
 		texture.draw(1200 * this->id, 0, 1200, Camera::HEIGHT);
 	}
+	ofCircle(id * 1440, 0, 50);
 //	camera->draw();
 //	texture.draw(1200 * this->id, 0, 1200, Camera::HEIGHT);
 }
-
-

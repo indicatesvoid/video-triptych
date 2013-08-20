@@ -58,7 +58,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src/events;src/arduino;src/screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -100,12 +100,18 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\events\AppEvent.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\PressureMonitor.cpp" />
+    <ClCompile Include="src\arduino\PressureMonitor.cpp" />
+    <ClCompile Include="src\screens\Camera.cpp" />
+    <ClCompile Include="src\screens\Screen.cpp" />
     <ClCompile Include="src\VideoTriptych.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\PressureMonitor.h" />
+    <ClInclude Include="src\arduino\PressureMonitor.h" />
+    <ClInclude Include="src\events\AppEvent.h" />
+    <ClInclude Include="src\screens\Camera.h" />
+    <ClInclude Include="src\screens\Screen.h" />
     <ClInclude Include="src\VideoTriptych.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

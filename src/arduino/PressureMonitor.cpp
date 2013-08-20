@@ -8,8 +8,8 @@ PressureMonitor::PressureMonitor()
     this->screenId = 1;
 
 //  ofSetLogLevel(OF_LOG_VERBOSE);
-	serial.setup(0, 9600); //open the first device
-//	serial.setup("COM3", 9600);
+//	serial.setup(0, 9600); //open the first device
+	serial.setup("COM3", 9600);
     
     ofAddListener(ofEvents().update, this, &PressureMonitor::onUpdate);
 }
