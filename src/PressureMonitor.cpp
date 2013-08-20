@@ -4,12 +4,12 @@
 
 PressureMonitor::PressureMonitor()
 {
-    this->delay = 1000;
+    this->delay = 500;
     this->time = ofGetElapsedTimeMillis();
     
     ofSetLogLevel(OF_LOG_VERBOSE);
-	//serial.setup(0, 9600); //open the first device
-	serial.setup("COM3", 9600); // windows example
+	serial.setup(0, 9600); //open the first device
+	//serial.setup("COM3", 9600); // windows example
 	//serial.setup("/dev/tty.usbserial-A4001JEC", baud); // mac osx example
 	//serial.setup("/dev/ttyUSB0", baud); //linux example
     
@@ -24,9 +24,9 @@ void PressureMonitor::onUpdate(ofEventArgs &e)
 {
     if (ofGetElapsedTimeMillis() - time >= delay){
         time = ofGetElapsedTimeMillis();
-        ofLogNotice("tick");
-		// (1) write the letter "a" to serial:
-		serial.writeByte('a');
+        
+    // get the value of the first pressure sensor //
+		serial.writeByte(1);
 		
 		// (2) read
 		// now we try to read 3 bytes
