@@ -12,9 +12,7 @@ void loop()
 			sensor = analogRead(0);
 			degrees = map(sensor, 768, 853, 0, 90);
 			if (degrees < 0) degrees = 0;
-			Serial.print(degrees);
-//			Serial.print("X");
-//			Serial.print("X");
+			Serial.write(degrees);
 		}
 	}
 }
