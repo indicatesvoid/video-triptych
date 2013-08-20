@@ -1,0 +1,39 @@
+# gitignore file for Xcode4 projects
+# derived from http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+
+.DS_Store
+*.app
+*.swp
+*.lock
+*~.nib
+profile
+
+# ignore everything in /bin except bin/data
+!bin/
+bin/*
+!bin/data/
+
+build/
+DerivedData/
+
+xcuserdata
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.xcuserstate
+*.perspectivev3
+
+# gitignore for vs2010 projects
+
+*.exe
+*.exp
+*.lib
+*.pdb
+*.log
+*.sdf
+*.dll
+*.ilk
+*.opensdf
+*.user
+ipch/
+obj/
