@@ -56,6 +56,6 @@ void Screen::onPressureEvent(AppEvent::PressureData &e)
 {
     if (e.id == this->id){
         active = e.pressure != 0;
-    //    if (e.pressure > 0) ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
+        ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
     }
 }

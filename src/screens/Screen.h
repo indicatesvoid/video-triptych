@@ -2,7 +2,7 @@
 #pragma once
 #include "Camera.h"
 #include "AppEvent.h"
-#include "Settings.h"
+#include "../Settings.h"
 
 class Screen
 {

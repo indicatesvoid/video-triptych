@@ -3,15 +3,12 @@
 
 PressureMonitor::PressureMonitor()
 {
-    this->delay = 250;
+    this->delay = 1000;
     this->time = ofGetElapsedTimeMillis();
     this->screenId = 1;
 
-	serial.setup(0, 9600); //open the first device
-//	serialReady = serial.setup("COM3", 9600);
-//    if (serialReady) {
-//        ofAddListener(ofEvents().update, this, &PressureMonitor::onUpdate);
-//    }
+//	serialReady = serial.setup(0, 9600); // open the first device
+	serialReady = serial.setup("COM3", 9600);
     ofLogNotice("serialReady :: "+ofToString(serialReady));
     ofAddListener(ofEvents().update, this, &PressureMonitor::onUpdate);
 }
