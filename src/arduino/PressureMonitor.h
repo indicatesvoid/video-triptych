@@ -1,6 +1,7 @@
 
 #pragma once
 #include "ofMain.h"
+#include "AppEvent.h"
 
 class PressureMonitor{
     
@@ -11,6 +12,8 @@ class PressureMonitor{
         int             time;
         int             delay;
 		int				screenId;
+        bool            serialReady;
         void            onUpdate(ofEventArgs &e);
+    
         ofSerial        serial;
 };

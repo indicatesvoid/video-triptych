@@ -6,6 +6,12 @@ class AppEvent : public ofEventArgs
 {
 	public:
     
-		static ofEvent<unsigned long> TIMER;
+    struct PressureData {
+        int id;
+        int pressure;
+    };
+    
+    static ofEvent<unsigned long>   TIMER;
+    static ofEvent<PressureData>    PRESSURE;
 
 };

@@ -3,6 +3,7 @@
 
 void VideoTriptych::setup()
 {
+    ofEnableSmoothing();
 	ofSetVerticalSync(true);
     ofSetWindowPosition(0, 1000);
     screens.push_back(new Screen(0));

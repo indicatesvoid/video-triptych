@@ -65,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		DCD117B717C43C4E00D9A11B /* VideoTriptychDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoTriptychDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCDB432E17C3FFCE00992C23 /* PressureMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PressureMonitor.cpp; path = arduino/PressureMonitor.cpp; sourceTree = "<group>"; };
 		DCDB432F17C3FFCE00992C23 /* PressureMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PressureMonitor.h; path = arduino/PressureMonitor.h; sourceTree = "<group>"; };
 		DCDB433717C400B600992C23 /* AppEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppEvent.cpp; path = events/AppEvent.cpp; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* VideoTriptych.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VideoTriptych.app; path = /Users/Stephen/Code/of_v0.8.0/apps/VideoTriptych/bin/VideoTriptych.app; sourceTree = "<absolute>"; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* VideoTriptych.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = VideoTriptych.cpp; path = src/VideoTriptych.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* VideoTriptych.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = VideoTriptych.h; path = src/VideoTriptych.h; sourceTree = SOURCE_ROOT; };
@@ -219,6 +219,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
+				DCD117B717C43C4E00D9A11B /* VideoTriptychDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,7 +265,7 @@
 			);
 			name = VideoTriptych;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* VideoTriptych.app */;
+			productReference = DCD117B717C43C4E00D9A11B /* VideoTriptychDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
