@@ -1,10 +1,10 @@
 
 #include "Screen.h"
 
-Screen::Screen(int id)
+Screen::Screen(int id, int cameraId)
 {
 	this->id = id;
-	camera = new Camera(id);
+	camera = new Camera(cameraId);
 	camera->start();
 	texture.allocate(Camera::WIDTH, Camera::HEIGHT, GL_RGB);
 	pixels = new unsigned char[Camera::WIDTH * Camera::HEIGHT * 3];
@@ -55,7 +55,7 @@ void Screen::draw()
 void Screen::onPressureEvent(AppEvent::PressureData &e)
 {
     if (e.id == this->id){
-        active = e.pressure != 0;
-        ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
+        active = e.pressure > 0;
+        if (active) ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
     }
 }

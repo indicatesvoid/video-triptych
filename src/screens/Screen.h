@@ -8,7 +8,7 @@ class Screen
 {
 	public:
     
-		Screen(int id);
+		Screen(int id, int cameraId);
 		int						id;
         bool                    active;
     

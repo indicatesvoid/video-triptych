@@ -4,7 +4,12 @@
 Camera::Camera(int deviceId)
 {
 	this->id = deviceId;
-	video.setDeviceID(deviceId);
+//    vector< ofVideoDevice > devices = video.listDevices();
+//    for(int i=0; i < devices.size(); i++)
+//    {
+//        ofLogNotice("camera : "+ofToString(devices[i].id) + " : "+ofToString(devices[i].bAvailable));
+//    }
+    video.setDeviceID(deviceId);
 	video.setDesiredFrameRate(60);
 }
 
