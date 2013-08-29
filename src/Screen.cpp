@@ -39,7 +39,7 @@ void Screen::draw()
 {
     ofSetColor(255, 255, 255);
 	if (cameraReady){
-		texture.draw(SETTINGS::SCREEN_WIDTH * this->id, 0, SETTINGS::SCREEN_WIDTH, Camera::HEIGHT);
+		texture.draw(500 * this->id, 0, 500, 1440);
 	}
     // draw indication of pressure //
     if (this->active){
@@ -47,7 +47,7 @@ void Screen::draw()
     }   else{
         ofSetColor(255, 0, 0);
     }
-	ofCircle((id * SETTINGS::SCREEN_WIDTH) + 15, 15, 10);
+	ofCircle((id *500) + 15, 15, 10);
 //	camera->draw();
 //	texture.draw(1200 * this->id, 0, SETTINGS::SCREEN_WIDTH, Camera::HEIGHT);
 }

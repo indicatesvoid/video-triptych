@@ -2,9 +2,8 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Settings.h"
 #include "Screen.h"
-#include "PressureMonitor.h"
+#include "SensorMonitor.h"
 
 class VideoTriptych : public ofBaseApp{
 
@@ -17,7 +16,8 @@ class VideoTriptych : public ofBaseApp{
 		void keyReleased(int key);
     
     private:
-        PressureMonitor     pm;
+        SensorMonitor       sensors;
         vector<Screen*>     screens;
+        vector<Camera*>     cameras;
 
 };

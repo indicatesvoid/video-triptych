@@ -1,20 +1,18 @@
 
-#include "PressureMonitor.h"
+#include "SensorMonitor.h"
 
-PressureMonitor::PressureMonitor()
+SensorMonitor::SensorMonitor()
 {
     this->delay = 250;
     this->time = ofGetElapsedTimeMillis();
     this->screenId = 1;
 
-//  serial.listDevices();
 	serialReady = serial.setup(0, 9600); // open the first device
-//	serialReady = serial.setup("COM3", 9600);
     ofLogNotice("serialReady :: "+ofToString(serialReady));
-    ofAddListener(ofEvents().update, this, &PressureMonitor::onUpdate);
+    ofAddListener(ofEvents().update, this, &SensorMonitor::onUpdate);
 }
 
-void PressureMonitor::onUpdate(ofEventArgs &e)
+void SensorMonitor::onUpdate(ofEventArgs &e)
 {
     if (ofGetElapsedTimeMillis() - time >= delay){
         time = ofGetElapsedTimeMillis();

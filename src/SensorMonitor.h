@@ -3,10 +3,10 @@
 #include "ofMain.h"
 #include "AppEvent.h"
 
-class PressureMonitor{
+class SensorMonitor{
     
     public:
-        PressureMonitor();
+        SensorMonitor();
     
     private:
         int             time;
