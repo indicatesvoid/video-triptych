@@ -1,12 +1,16 @@
 
 #include "VideoTriptych.h"
 
+//SensorMonitor VideoTriptych::sensors = new SensorMonitor(2);
+
 void VideoTriptych::setup()
 {
     ofEnableSmoothing();
     ofSetVerticalSync(true);
     ofSetWindowPosition(0, 1000);
+    sensors = new SensorMonitor(2);
     screens.push_back(new Screen(0, 0));
+    screens.push_back(new Screen(1, 1));
 //    screens.push_back(new Screen(1, 2));
 //	ofSetWindowShape(screens.size() * 1440, 1920);
 }

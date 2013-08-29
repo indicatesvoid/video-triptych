@@ -8,6 +8,7 @@
 class VideoTriptych : public ofBaseApp{
 
 	public:
+    
 		void setup();
 		void update();
 		void draw();
@@ -16,7 +17,7 @@ class VideoTriptych : public ofBaseApp{
 		void keyReleased(int key);
     
     private:
-        SensorMonitor       sensors;
+        SensorMonitor*       sensors;
         vector<Screen*>     screens;
         vector<Camera*>     cameras;
 

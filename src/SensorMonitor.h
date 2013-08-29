@@ -6,14 +6,18 @@
 class SensorMonitor{
     
     public:
-        SensorMonitor();
+        SensorMonitor(int num);
+    
+        int getNumSensors();
     
     private:
         int             time;
         int             delay;
-		int				screenId;
+		int				sensorId;
         bool            serialReady;
         void            onUpdate(ofEventArgs &e);
+    
+        static int numSensors;
     
         ofSerial        serial;
 };

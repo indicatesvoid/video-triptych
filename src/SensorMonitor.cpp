@@ -1,14 +1,17 @@
-
 #include "SensorMonitor.h"
 
-SensorMonitor::SensorMonitor()
+int SensorMonitor::numSensors;
+
+SensorMonitor::SensorMonitor(int num)
 {
     this->delay = 250;
     this->time = ofGetElapsedTimeMillis();
-    this->screenId = 1;
+    SensorMonitor::numSensors = num;
+    this->sensorId = 0;
 
 	serialReady = serial.setup(0, 9600); // open the first device
     ofLogNotice("serialReady :: "+ofToString(serialReady));
+    ofLogNotice("Num sensors :: " + ofToString(SensorMonitor::numSensors));
     ofAddListener(ofEvents().update, this, &SensorMonitor::onUpdate);
 }
 
@@ -16,9 +19,15 @@ void SensorMonitor::onUpdate(ofEventArgs &e)
 {
     if (ofGetElapsedTimeMillis() - time >= delay){
         time = ofGetElapsedTimeMillis();
-		serial.writeByte(screenId);
+		serial.writeByte(sensorId);
 		int pressure = serial.readByte();
-        AppEvent::PressureData pd = {screenId, pressure};
+        AppEvent::PressureData pd = {sensorId, pressure};
         ofNotifyEvent(AppEvent::PRESSURE, pd);
+        ofLogNotice("Pinging sensor # :: " + ofToString(sensorId));
+        sensorId = (sensorId < numSensors - 1) ? sensorId + 1 : 0;
     }
+}
+
+int SensorMonitor::getNumSensors() {
+    return numSensors;
 }
