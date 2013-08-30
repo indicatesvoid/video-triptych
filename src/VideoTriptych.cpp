@@ -9,8 +9,11 @@ void VideoTriptych::setup()
     ofSetVerticalSync(true);
     ofSetWindowPosition(0, 1000);
     sensors = new SensorMonitor(2);
-    screens.push_back(new Screen(0, 0));
-    screens.push_back(new Screen(1, 1));
+    vector< Effect* > effects;
+    effects.push_back(new ColorFilterEffect(255,0,0));
+    
+    screens.push_back(new Screen(0, 0, effects));
+    screens.push_back(new Screen(1, 1, effects));
 //    screens.push_back(new Screen(1, 2));
 	ofSetWindowShape(screens.size() * screens[0]->getDisplayWidth(), screens[0]->getDisplayHeight());
 }

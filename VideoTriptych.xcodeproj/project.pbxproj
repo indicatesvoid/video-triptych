@@ -171,6 +171,8 @@
 		7F4CC69D17D0245400AB7E5D /* background_segm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = background_segm.hpp; sourceTree = "<group>"; };
 		7F4CC69E17D0245400AB7E5D /* tracking.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tracking.hpp; sourceTree = "<group>"; };
 		7F4CC69F17D0245400AB7E5D /* video.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = video.hpp; sourceTree = "<group>"; };
+		7FF70DF517D12520000DDB8D /* Effect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Effect.h; path = effects/Effect.h; sourceTree = "<group>"; };
+		7FF70DF617D12566000DDB8D /* ColorFilterEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorFilterEffect.h; path = effects/ColorFilterEffect.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		DCAD2E0B17CEAB8200CD5E69 /* AppEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppEvent.cpp; sourceTree = "<group>"; };
 		DCAD2E0C17CEAB8200CD5E69 /* AppEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppEvent.h; sourceTree = "<group>"; };
@@ -240,12 +242,14 @@
 			name = openCV;
 			sourceTree = "<group>";
 		};
-		7F4CC4E517D0208C00AB7E5D /* filters */ = {
+		7F4CC4E517D0208C00AB7E5D /* effects */ = {
 			isa = PBXGroup;
 			children = (
+				7FF70DF517D12520000DDB8D /* Effect.h */,
 				7F4CC4E417D0208100AB7E5D /* openCV */,
+				7FF70DF617D12566000DDB8D /* ColorFilterEffect.h */,
 			);
-			name = filters;
+			name = effects;
 			sourceTree = "<group>";
 		};
 		7F4CC56A17D0229500AB7E5D /* ofxOpenCv */ = {
@@ -579,7 +583,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				7F4CC4E517D0208C00AB7E5D /* filters */,
+				7F4CC4E517D0208C00AB7E5D /* effects */,
 				DCAD2E0B17CEAB8200CD5E69 /* AppEvent.cpp */,
 				DCAD2E0C17CEAB8200CD5E69 /* AppEvent.h */,
 				DCAD2E0D17CEAB8200CD5E69 /* Camera.cpp */,

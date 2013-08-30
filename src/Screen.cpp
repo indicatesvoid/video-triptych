@@ -18,6 +18,19 @@ Screen::Screen(int id, int cameraId)
     setDisplaySize(2560 / 4, 1440 / 4);
 }
 
+Screen::Screen(int id, int cameraId, vector< Effect* > effects)
+{
+	this->id = id;
+    this->effects = effects;
+	camera = new Camera(cameraId);
+	camera->start();
+	texture.allocate(Camera::WIDTH, Camera::HEIGHT, GL_RGB);
+	pixels = new unsigned char[Camera::WIDTH * Camera::HEIGHT * 3];
+    ofAddListener(AppEvent::PRESSURE, this, &Screen::onPressureEvent);
+    
+    setDisplaySize(2560 / 4, 1440 / 4);
+}
+
 void Screen::update()
 {
 	if (camera->video.isFrameNew()) {
@@ -59,9 +72,20 @@ void Screen::setDisplaySize(int w, int h) {
     Screen::display.height = h;
 }
 
+void Screen::renderEffects() {
+    for(int effect = 0; effect < effects.size(); effect++) effects[effect]->draw();
+}
+
+void Screen::clearEffects() {
+    for(int effect = 0; effect < effects.size(); effect++) effects[effect]->clear();
+}
+
 void Screen::draw()
 {
     ofSetColor(255, 255, 255);
+    
+    if(this->active) renderEffects();
+    
 	if (cameraReady){
 		texture.draw(Screen::display.width * this->id, 0, Screen::display.width, Screen::display.height);
 	}
@@ -69,6 +93,7 @@ void Screen::draw()
     if (this->active){
         ofSetColor(0, 255, 0);
     }   else{
+        clearEffects();
         ofSetColor(255, 0, 0);
     }
 	ofCircle((id * Screen::display.width) + 15, 15, 10);

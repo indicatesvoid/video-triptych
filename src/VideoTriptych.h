@@ -3,6 +3,8 @@
 
 #include "ofMain.h"
 #include "Screen.h"
+#include "Effect.h"
+#include "ColorFilterEffect.h"
 #include "SensorMonitor.h"
 
 class VideoTriptych : public ofBaseApp{

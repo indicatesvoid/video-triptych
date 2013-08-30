@@ -1,6 +1,8 @@
 
 #pragma once
 #include "Camera.h"
+#include "Effect.h"
+#include "ColorFilterEffect.h"
 #include "AppEvent.h"
 #include "ofxOpenCv.h"
 
@@ -14,6 +16,8 @@ class Screen
 	public:
     
 		Screen(int id, int cameraId);
+        Screen(int id, int cameraId, vector< Effect* > effects);
+    
 		int						id;
         bool                    active;
     
@@ -22,6 +26,9 @@ class Screen
 
 		void					draw();
 		void					update();
+    
+        void                    renderEffects();
+        void                    clearEffects();
 
 		unsigned char*          pixels;
 		unsigned char*          overlay;
@@ -37,6 +44,8 @@ class Screen
     
     private:
         void                    onPressureEvent(AppEvent::PressureData &e);
+    
+        vector< Effect* >       effects;
     
         static struct Display display;
     
