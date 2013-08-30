@@ -3,6 +3,11 @@
 #include "Camera.h"
 #include "AppEvent.h"
 
+struct Display {
+    int width;
+    int height;
+};
+
 class Screen
 {
 	public:
@@ -24,8 +29,18 @@ class Screen
 		unsigned char*			getPixels();
 		void                    setPixels(unsigned char* pixels);
     
+        int                     getDisplayWidth();
+        int                     getDisplayHeight();
+        Display                 getDisplaySize();
+        void                     setDisplaySize(int w, int h);
+    
     private:
         void                    onPressureEvent(AppEvent::PressureData &e);
+    
+        static struct Display display;
+    
+//        static int              displayWidth;
+//        static int              displayHeight;
 
 };
 

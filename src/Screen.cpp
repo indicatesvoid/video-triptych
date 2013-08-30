@@ -1,6 +1,11 @@
 
 #include "Screen.h"
 
+//int Screen::displayWidth = 1440;
+//int Screen::displayHeight = 1920;
+
+Display Screen::display;
+
 Screen::Screen(int id, int cameraId)
 {
 	this->id = id;
@@ -9,6 +14,8 @@ Screen::Screen(int id, int cameraId)
 	texture.allocate(Camera::WIDTH, Camera::HEIGHT, GL_RGB);
 	pixels = new unsigned char[Camera::WIDTH * Camera::HEIGHT * 3];
     ofAddListener(AppEvent::PRESSURE, this, &Screen::onPressureEvent);
+    
+    setDisplaySize(2560 / 4, 1440 / 4);
 }
 
 void Screen::update()
@@ -35,11 +42,28 @@ void Screen::setPixels(unsigned char* np)
 	texture.loadData(pixels, Camera::WIDTH, Camera::HEIGHT, GL_RGB);
 }
 
+int Screen::getDisplayWidth() {
+    return Screen::display.width;
+}
+
+int Screen::getDisplayHeight() {
+    return Screen::display.height;
+}
+
+Display Screen::getDisplaySize() {
+    return Screen::display;
+}
+
+void Screen::setDisplaySize(int w, int h) {
+    Screen::display.width = w;
+    Screen::display.height = h;
+}
+
 void Screen::draw()
 {
     ofSetColor(255, 255, 255);
 	if (cameraReady){
-		texture.draw(500 * this->id, 0, 500, 1440);
+		texture.draw(Screen::display.width * this->id, 0, Screen::display.width, Screen::display.height);
 	}
     // draw indication of pressure //
     if (this->active){
@@ -47,7 +71,7 @@ void Screen::draw()
     }   else{
         ofSetColor(255, 0, 0);
     }
-	ofCircle((id *500) + 15, 15, 10);
+	ofCircle((id * Screen::display.width) + 15, 15, 10);
 //	camera->draw();
 //	texture.draw(1200 * this->id, 0, SETTINGS::SCREEN_WIDTH, Camera::HEIGHT);
 }

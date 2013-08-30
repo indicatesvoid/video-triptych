@@ -1,7 +1,7 @@
 
 #include "VideoTriptych.h"
 
-//SensorMonitor VideoTriptych::sensors = new SensorMonitor(2);
+// NOTE: could use ofxFenster (https://github.com/underdoeg/ofxFenster) for screen splitting but waiting until its GLFW branch is more stable
 
 void VideoTriptych::setup()
 {
@@ -12,7 +12,7 @@ void VideoTriptych::setup()
     screens.push_back(new Screen(0, 0));
     screens.push_back(new Screen(1, 1));
 //    screens.push_back(new Screen(1, 2));
-//	ofSetWindowShape(screens.size() * 1440, 1920);
+	ofSetWindowShape(screens.size() * screens[0]->getDisplayWidth(), screens[0]->getDisplayHeight());
 }
 
 void VideoTriptych::update()
