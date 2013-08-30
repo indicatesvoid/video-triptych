@@ -2,6 +2,7 @@
 #pragma once
 #include "Camera.h"
 #include "AppEvent.h"
+#include "ofxOpenCv.h"
 
 struct Display {
     int width;
