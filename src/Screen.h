@@ -27,7 +27,8 @@ class Screen
 		void					draw();
 		void					update();
     
-        void                    renderEffects();
+        void                    predrawEffects();
+        void                    drawEffects();
         void                    clearEffects();
         void                    addEffects(vector< Effect* > effects);
 
@@ -42,7 +43,9 @@ class Screen
         int                     getDisplayWidth();
         int                     getDisplayHeight();
         Display                 getDisplaySize();
-        void                     setDisplaySize(int w, int h);
+        void                    setDisplaySize(int w, int h);
+    
+        int                     getHorizontalOffset();
     
     private:
         void                    onPressureEvent(AppEvent::PressureData &e);
@@ -50,6 +53,8 @@ class Screen
         vector< Effect* >       effects;
     
         static struct Display display;
+    
+        int hOffset;
     
 //        static int              displayWidth;
 //        static int              displayHeight;

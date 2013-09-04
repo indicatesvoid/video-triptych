@@ -15,7 +15,8 @@ Screen::Screen(int id, int cameraId)
 	pixels = new unsigned char[Camera::WIDTH * Camera::HEIGHT * 3];
     ofAddListener(AppEvent::PRESSURE, this, &Screen::onPressureEvent);
     
-    setDisplaySize(2560 / 4, 1440 / 4);
+    setDisplaySize(Camera::WIDTH, Camera::HEIGHT);
+    this->hOffset = Screen::display.width * this->id;
 }
 
 Screen::Screen(int id, int cameraId, vector< Effect* > effects)
@@ -58,7 +59,7 @@ void Screen::setPixels(unsigned char* np)
 ofImage Screen::getVideoFrame() {
     ofImage img;
     img.setFromPixels(camera->video.getPixelsRef());
-    return img;`
+    return img;
 }
 
 int Screen::getDisplayWidth() {
@@ -78,7 +79,11 @@ void Screen::setDisplaySize(int w, int h) {
     Screen::display.height = h;
 }
 
-void Screen::renderEffects() {
+void Screen::predrawEffects() {
+    for(int effect = 0; effect < effects.size(); effect++) effects[effect]->predraw();
+}
+
+void Screen::drawEffects() {
     for(int effect = 0; effect < effects.size(); effect++) effects[effect]->draw();
 }
 
@@ -86,37 +91,43 @@ void Screen::clearEffects() {
     for(int effect = 0; effect < effects.size(); effect++) effects[effect]->clear();
 }
 
-void Screen::addEffects(vector< Effect* > effects) {
-    for(int effect = 0; effect < effects.size(); effect++) {
-        effects.push_back(effects[effect]);
+void Screen::addEffects(vector< Effect* > newEffects) {
+    for(int effect = 0; effect < newEffects.size(); effect++) {
+        effects.push_back(newEffects[effect]);
     }
+}
+
+int Screen::getHorizontalOffset() {
+    return hOffset;
 }
 
 void Screen::draw()
 {
     ofSetColor(255, 255, 255);
     
-    if(this->active) renderEffects();
+    if(this->active) predrawEffects();
     
 	if (cameraReady){
-		texture.draw(Screen::display.width * this->id, 0, Screen::display.width, Screen::display.height);
+		texture.draw(hOffset, 0, Screen::display.width, Screen::display.height);
 	}
     // draw indication of pressure //
     if (this->active){
         ofSetColor(0, 255, 0);
     }   else{
-        clearEffects();
         ofSetColor(255, 0, 0);
     }
 	ofCircle((id * Screen::display.width) + 15, 15, 10);
 //	camera->draw();
 //	texture.draw(1200 * this->id, 0, SETTINGS::SCREEN_WIDTH, Camera::HEIGHT);
+    
+    if(this->active) drawEffects();
+    else clearEffects();
 }
 //
 void Screen::onPressureEvent(AppEvent::PressureData &e)
 {
     if (e.id == this->id){
         active = e.pressure > 0;
-        if (active) ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
+//        if (active) ofLogNotice("sensor " + ofToString(e.id) + " : pressure = " + ofToString(e.pressure));
     }
 }

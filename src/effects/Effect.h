@@ -5,6 +5,7 @@
 class Effect {
     
     public:
+        virtual void predraw() { };
         virtual void draw() { };
         virtual void clear() { };
 };

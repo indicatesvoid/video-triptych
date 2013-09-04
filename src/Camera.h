@@ -8,8 +8,8 @@ class Camera
 
 		Camera(int deviceId);
     
-		static const int		WIDTH = 1280;
-		static const int		HEIGHT = 720;
+		static const int		WIDTH = 340;
+		static const int		HEIGHT = 200;
 
 		void					start();
 		void					stop();

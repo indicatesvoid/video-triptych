@@ -5,6 +5,7 @@
 #include "Screen.h"
 #include "Effect.h"
 #include "ColorFilterEffect.h"
+#include "FaceSwapEffect.h"
 #include "SensorMonitor.h"
 
 class VideoTriptych : public ofBaseApp{
@@ -22,5 +23,6 @@ class VideoTriptych : public ofBaseApp{
         SensorMonitor*       sensors;
         vector<Screen*>     screens;
         vector<Camera*>     cameras;
+    Effect* faceSwap;
 
 };

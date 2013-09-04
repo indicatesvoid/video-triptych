@@ -23,7 +23,7 @@ void SensorMonitor::onUpdate(ofEventArgs &e)
 		int pressure = serial.readByte();
         AppEvent::PressureData pd = {sensorId, pressure};
         ofNotifyEvent(AppEvent::PRESSURE, pd);
-        ofLogNotice("Pinging sensor # :: " + ofToString(sensorId));
+//        ofLogNotice("Pinging sensor # :: " + ofToString(sensorId));
         sensorId = (sensorId < numSensors - 1) ? sensorId + 1 : 0;
     }
 }

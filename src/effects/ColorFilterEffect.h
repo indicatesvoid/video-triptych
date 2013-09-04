@@ -9,7 +9,7 @@ class ColorFilterEffect : public Effect {
             setColor(r, g, b);
         }
     
-        void draw() {
+        void predraw() {
             ofSetColor(r, g, b);
         }
     
