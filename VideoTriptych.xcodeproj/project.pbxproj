@@ -71,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F40852417D7AF0A006A6EA2 /* FaceSwapEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceSwapEffect.h; sourceTree = "<group>"; };
 		7F4CC56C17D022BB00AB7E5D /* ofxCvBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCvBlob.h; path = ../../addons/ofxOpenCv/src/ofxCvBlob.h; sourceTree = "<group>"; };
 		7F4CC56D17D022BB00AB7E5D /* ofxCvColorImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxCvColorImage.cpp; path = ../../addons/ofxOpenCv/src/ofxCvColorImage.cpp; sourceTree = "<group>"; };
 		7F4CC56E17D022BB00AB7E5D /* ofxCvColorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCvColorImage.h; path = ../../addons/ofxOpenCv/src/ofxCvColorImage.h; sourceTree = "<group>"; };
@@ -235,19 +236,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F4CC4E417D0208100AB7E5D /* openCV */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = openCV;
-			sourceTree = "<group>";
-		};
 		7F4CC4E517D0208C00AB7E5D /* effects */ = {
 			isa = PBXGroup;
 			children = (
 				7FF70DF517D12520000DDB8D /* Effect.h */,
-				7F4CC4E417D0208100AB7E5D /* openCV */,
 				7FF70DF617D12566000DDB8D /* ColorFilterEffect.h */,
+				7F40852417D7AF0A006A6EA2 /* FaceSwapEffect.h */,
 			);
 			name = effects;
 			sourceTree = "<group>";

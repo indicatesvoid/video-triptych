@@ -7,5 +7,4 @@ class Effect {
     public:
         virtual void draw() { };
         virtual void clear() { };
-    
 };

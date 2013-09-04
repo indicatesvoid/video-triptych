@@ -55,6 +55,12 @@ void Screen::setPixels(unsigned char* np)
 	texture.loadData(pixels, Camera::WIDTH, Camera::HEIGHT, GL_RGB);
 }
 
+ofImage Screen::getVideoFrame() {
+    ofImage img;
+    img.setFromPixels(camera->video.getPixelsRef());
+    return img;`
+}
+
 int Screen::getDisplayWidth() {
     return Screen::display.width;
 }
@@ -78,6 +84,12 @@ void Screen::renderEffects() {
 
 void Screen::clearEffects() {
     for(int effect = 0; effect < effects.size(); effect++) effects[effect]->clear();
+}
+
+void Screen::addEffects(vector< Effect* > effects) {
+    for(int effect = 0; effect < effects.size(); effect++) {
+        effects.push_back(effects[effect]);
+    }
 }
 
 void Screen::draw()

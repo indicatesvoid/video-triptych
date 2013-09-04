@@ -29,6 +29,7 @@ class Screen
     
         void                    renderEffects();
         void                    clearEffects();
+        void                    addEffects(vector< Effect* > effects);
 
 		unsigned char*          pixels;
 		unsigned char*          overlay;
@@ -36,6 +37,7 @@ class Screen
 
 		unsigned char*			getPixels();
 		void                    setPixels(unsigned char* pixels);
+        ofImage                 getVideoFrame();
     
         int                     getDisplayWidth();
         int                     getDisplayHeight();
