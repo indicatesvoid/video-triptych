@@ -23,6 +23,6 @@ class VideoTriptych : public ofBaseApp{
         SensorMonitor*       sensors;
         vector<Screen*>     screens;
         vector<Camera*>     cameras;
-    Effect* faceSwap;
+        Effect* faceSwap;
 
 };
